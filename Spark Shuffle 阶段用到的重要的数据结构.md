@@ -57,7 +57,7 @@ grammar_cjkRuby: true
 #### WritablePartitionedPairCollection
    - WritablePartitionedPairCollection 接口定义了将带有分区信息的key-value键值对插入到集合,并提供了获取可以将集合的内容按照字节写入磁盘的WritablePartitionedIterator迭代器.在其伴生类中,还提供了根据指定的key比较器获取默认的根据分区ID进行比较,或者既根据分区ID进行比较,也根据key-value键值对的key进行比较的比较器.
    - WritablePartitionedPairCollection的结构图:
-     <img src='https://www.github.com/lijiayan2015/cangku/raw/master/小书匠/1547687864602.png' width=500 height=300>
+     <img src='https://www.github.com/lijiayan2015/cangku/raw/master/小书匠/1547687864602.png' width=700 height=300>
    - WritablePartitionedPairCollection的方法:
      - insert(partition: Int, key: K, value: V) 将键值对以及key对应的分区ID插入到集合中,抽象方法,需要子类去实现.
      - partitionedDestructiveSortedIterator(keyComparator: Option[Comparator[K]]): Iterator[((Int, K), V)]  根据指定的Key的比较器,返回分区有序,分区内元素也有序的迭代器,如果没有指定key的比较器,也即比较器参数传None,那么只返回分区有序的迭代器,抽象方法,需要子类去实现.
